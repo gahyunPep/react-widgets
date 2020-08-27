@@ -7,7 +7,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   useEffect(() => {
     const onBodyClick = (event) => {
       // if user clicked inside of component don't do anything
-      // when the component is now rendered ref.current is set to null but this event will still invoke when user clicks somewhere in body -> err
+      // when the component is not rendered ref.current is set to null but this event will still invoke when user clicks somewhere in body -> err
       if(ref.current.contains(event.target)){
         return;
       }
